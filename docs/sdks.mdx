@@ -1,0 +1,51 @@
+---
+id: Utilising sdks
+---        
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="js"
+  values={[
+    { label: 'JavaScript', value: 'js', },
+    { label: 'Ruby', value: 'rb', },
+    { label: 'Go', value: 'go', },
+  ]
+}>
+<TabItem value="js">
+
+```js
+const SDK = require("pioneer-javascript-sdk");
+const scoutAddress = "http://localhost:3030"; // if the actual address has a path, include that in the getServerAddress() method
+const sdkKey = "JazzyElksRule"; // the sdkKey that should match the sdkKey provided by Compass
+const config = await new SDK(scoutAddress, sdkKey).connect().withWaitForData({ timeOut: 1000, pollingAttempts: 10 });  // makes an active sse connection
+const sdkClient = config.client;
+console.log(sdkClient.getFeature("LOGIN_MICROSERVICE")); // gets the feature value
+```
+
+</TabItem>
+<TabItem value="rb">
+
+```rb
+require 'pioneer_ruby_sdk'
+sdk_client = PioneerRubySdk.new('/path/to/scout', 'sdk_key')
+sdk_connection = sdk_client.connect().with_wait_for_data()
+```
+
+</TabItem>
+<TabItem value="go">
+
+```go
+// Initialize an SDK client
+scoutDaemon := "http://localhost:3030"
+sdkKey := "a-dummy-key"
+client := sdk.InitMember(scoutDaemon, sdkKey)
+
+// connect SDK client to Scout to listen for SSE updates
+client.Connect()
+client.Listen()
+```
+
+</TabItem>
+</Tabs>
