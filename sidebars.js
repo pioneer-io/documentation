@@ -15,7 +15,15 @@ module.exports = {
 
   // But you can create a sidebar manually
   
-  mySidebar: {
-    'Pioneer': ['intro', 'Utilising sdks']
-  },  
+  mySidebar: [
+    {
+      type: 'category',
+      label: 'Pioneer',
+      items: [{
+        type: 'category',
+        label: 'Getting Started',
+        items: ['intro', 'Working with flags']
+      }],
+    },
+  ], 
 };
