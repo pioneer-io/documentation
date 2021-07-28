@@ -5,7 +5,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Pioneer',
   tagline: 'Feature flag management application',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://pioneer-io.github.io',
   baseUrl: '/documentation/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
