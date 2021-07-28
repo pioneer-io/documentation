@@ -7,7 +7,7 @@ hide_table_of_contents: true
 ---
 
 <div style={{textAlign: 'center'}}>
-  <img src={require('./assets/pioneer_color_graphic.png').default} alt='Pioneer logo' />
+  <img height='40%' width='40%' src={require('./assets/pioneer_color_logo.png').default} alt='Pioneer logo' />
 </div>
 
 # Pioneer

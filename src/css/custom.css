@@ -6,15 +6,21 @@
  */
 
 /* You can override the default Infima variables here. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #f45459;
+  --ifm-color-primary-dark: #f2353b;
+  --ifm-color-primary-darker: #f1262c;
+  --ifm-color-primary-darkest: #d80e14;
+  --ifm-color-primary-light: #f67377
+  --ifm-color-primary-lighter: #f78286;
+  --ifm-color-primary-lightest: #fab0b3;
   --ifm-code-font-size: 95%;
+  --ifm-menu-color-active: white;
+  --ifm-menu-color: silver;
+  --ifm-font-family-base: 'Poppins', 'sans-serif';
+  --ifm-background-color: white;
 }
 
 .docusaurus-highlight-code-line {
@@ -26,4 +32,12 @@
 
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+aside {
+  background-color: darkslategrey;
+}
+
+.codeBlockContainer {
+  background-color: --ifm-code-background
 }
