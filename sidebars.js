@@ -7,7 +7,7 @@ module.exports = {
         {
           type: 'category',
           label: 'Getting Started',
-          items: ['intro', 'install', 'Working with flags', 'rollout', 'logs']
+          items: ['intro', 'install', 'Working with flags', 'rollout', 'logs', 'sdk-key']
         },
         {
           type: 'category',

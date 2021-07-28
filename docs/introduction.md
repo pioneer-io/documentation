@@ -23,6 +23,8 @@ Using a feature flag management tool, such as Pioneer, enables you to minimize t
 
 This results in significantly less downtime and reduces the strain of incident management of your team. Pioneer is easy to use out-of-the-box, with no steep learning curve or extensive configuration required.
 
+Pioneer also provides the option of rolling out a new microservice to a specified percentage of users. Rolling out a new microservice to an increasing number of users enables you to test the microservice under different load conditions and only expose a subset of users to a potentially sub-standard user experience, if any issues occur. 
+
 ## How does Pioneer work?
 
 **Summary diagram**
@@ -86,4 +88,4 @@ if sdkClient.Get('flag name') {
 
 </Tabs>
 
-For detailed information on integrating an SDK into your application see [integrating SDKs](/sdk-intro.mdx).
+For detailed information on integrating an SDK into your application see [integrating SDKs](/sdk-intro.md).
