@@ -3,12 +3,14 @@ id: intro
 title: Installation
 slug: '/'
 hide_table_of_contents: true
+hide_title: true
 ---
 
-<img
-  src={require('/assets/pioneer_color_graphic.png').default}
-  alt='Pioneer logo'
-/>
+<div style={{textAlign: 'center'}}>
+  <img src={require('./assets/pioneer_color_graphic.png').default} alt='Pioneer logo' />
+</div>
+
+# Pioneer
 
 Welcome to Pioneer, a light-weight feature flag management tool.
 
@@ -34,9 +36,4 @@ docker-compose up
 ### Access the User Interface
 Visit `http://localhost:3000` and start creating your own feature flags!
 
-## Pioneer Deployment
-Pioneer is comprised of the following components:
-- postgreSQL: database for storing flags, logs and SDK key data
-- NATS: messaging service for asynchronous, fault-tolerant communication
-- Compass: a React application that provides a User Interface
-- Scout: a daemon that acts as the interface between SDKs installed in a user's application code and Compass. 
+
