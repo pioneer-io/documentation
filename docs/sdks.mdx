@@ -16,12 +16,26 @@ import TabItem from '@theme/TabItem';
 <TabItem value="js">
 
 ```js
+<<<<<<< Updated upstream
 const SDK = require("pioneer-javascript-sdk");
 const scoutAddress = "http://localhost:3030"; // if the actual address has a path, include that in the getServerAddress() method
 const sdkKey = "JazzyElksRule"; // the sdkKey that should match the sdkKey provided by Compass
 const config = await new SDK(scoutAddress, sdkKey).connect().withWaitForData({ timeOut: 1000, pollingAttempts: 10 });  // makes an active sse connection
 const sdkClient = config.client;
 console.log(sdkClient.getFeature("LOGIN_MICROSERVICE")); // gets the feature value
+=======
+// require the SDK
+const SDK = require("pioneer-javascript-sdk");
+// if the actual address has a path, include that in the getServerAddress() method
+const scoutAddress = "http://localhost:3030";
+// the sdkKey that should match the sdkKey provided by Compass
+const sdkKey = "JazzyElksRule";
+// makes an active sse connection
+const config = await new SDK(scoutAddress, sdkKey).connect().withWaitForData();
+const sdkClient = config.client;
+// gets the feature value
+console.log(sdkClient.getFeature("LOGIN_MICROSERVICE"));
+>>>>>>> Stashed changes
 ```
 
 </TabItem>
