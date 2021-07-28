@@ -23,6 +23,10 @@
   --ifm-background-color: white;
 }
 
+h1 {
+  color: var(--ifm-color-primary-darkest);
+}
+
 .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.1);
   display: block;

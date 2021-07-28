@@ -2,10 +2,8 @@
 id: install
 title: Installation
 hide_table_of_contents: true
-hide_title: true
 ---
 
-## Quick Start
 To install and run Pioneer, [GitHub](https://cli.github.com/) and [Docker](https://docs.docker.com/get-docker/) are required. 
 
 ### Clone GitHub repository
