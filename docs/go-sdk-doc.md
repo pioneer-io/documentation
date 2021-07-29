@@ -3,7 +3,7 @@ id: go-sdk-doc
 title: Go SDK
 ---
 
-# Go SDK for Pioneer
+# Go SDK
 
 [![Test](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml/badge.svg)](https://github.com/pioneer-io/go_sdk/actions/workflows/verify.yml)
 
