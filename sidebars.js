@@ -12,8 +12,17 @@ module.exports = {
         {
           type: 'category',
           label: 'Integrating SDKs',
-          collapsed: true,
           items: ['sdk-intro','javascript-sdk-doc','ruby-sdk-doc','go-sdk-doc']
+        },
+        {
+          type: 'category',
+          label: 'Customization',
+          items: ['docker', 'env-variables']
+        },
+        {
+          type: 'doc',
+          label: 'Architecture',
+          id: 'architecture'
         }
       ],
     },

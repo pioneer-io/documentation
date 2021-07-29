@@ -1,6 +1,6 @@
 ---
 id: javascript-sdk-doc
-title: Javascript SDK Documentation
+title: JavaScript SDK 
 ---
 
 ## Installation
@@ -12,7 +12,7 @@ npm install pioneer-javascript-sdk
 
 ## Basic Usage
 
-To initialize a new SDK client, you need to pass in the server address and port of Scout for the first parameter. **Scout is the name of a daemon that serves the entire feature ruleset to all connected SDK clients through SSE.** Note, that if the actual endpoint contains a path like "/features", then you should include that in the `getServerAddress()` method of config. In addition, you need to supply an SDK key so that Scout can authenticate requests. This SDK key must match the one provded by Compass, and can be found under the 'Account' tab via the user interface.
+To initialize a new SDK client, you need to pass in the server address and port of Scout for the first parameter. **Scout is the name of a daemon that serves the entire feature ruleset to all connected SDK clients through SSE.** Note, that if the actual endpoint contains a path like "/features", then you should include that in the `getServerAddress()` method of config. In addition, you need to supply an SDK key so that Scout can authenticate requests. This SDK key must match the one provided by Compass, and can be found under the 'Account' tab via the user interface.
 
 After instantiating a new SDK, you can call `connect()` which will attempt to connect with Scout. You should also chain another method called `withWaitForData()`. Calling await on this method will block the code until the SDK receives the entire ruleset from Scout. You can supply parameters for how long and how many times it should try to connect before timing out.
 

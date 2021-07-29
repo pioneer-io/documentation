@@ -1,6 +1,6 @@
 ---
 id: ruby-sdk-doc
-title: Ruby SDK Documentation
+title: Ruby SDK 
 ---
 
 # Ruby SDK for Pioneer
