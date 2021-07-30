@@ -33,7 +33,7 @@ In order to use Pioneer in your application you need to run Pioneer on your own 
 
 Feature flag creation/deletion/editing all occurs via a Graphical User Interface (GUI), running at `http://localhost:3000`. Any changes made in the GUI will take affect immediately in your application.
 
-Pioneer is integrated into your application via an SDK. Pioneer SDKs are available in Ruby, JavaScript or Go. 
+Pioneer is integrated into your application via an SDK. Pioneer SDKs are available in [Ruby](/ruby-sdk-doc.md), [Node.JS](/javascript-sdk-doc.md) or [Go](/go-sdk-doc.md). 
 
 The SDK handles the communication between Pioneer and your application code. Within your application, you just need to evaluate if a feature flag is toggled on or off (using boolean values) and execute your code accordingly. 
 

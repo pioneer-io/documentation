@@ -11,8 +11,6 @@ title: Go SDK
 
 This module is a server-side SDK for applications written in Golang using Pioneer's feature management service.
 
-Visit the [pioneer-io/compass](https://github.com/pioneer-io/compass) repo for more.
-
 ## Getting started
 
 From your Go module:
