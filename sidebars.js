@@ -23,6 +23,11 @@ module.exports = {
           type: 'doc',
           label: 'Architecture',
           id: 'architecture'
+        },
+        {
+          type: 'category',
+          label: 'Additional Documentation',
+          items: ['doc-description', 'compass', 'scout']
         }
       ],
     },
