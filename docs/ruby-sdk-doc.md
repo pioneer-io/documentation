@@ -111,4 +111,4 @@ sdk_with_user.log_event(event_object)
 ```
 
 ## Testing 
-To run a basic suite of unit tests, just `rake` from the main directory.
+To run a basic suite of unit tests, just run `rake` from the main directory.

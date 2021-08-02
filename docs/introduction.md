@@ -27,7 +27,9 @@ Pioneer also provides the option of rolling out a new microservice to a specifie
 
 ## How does Pioneer work?
 
-**Summary diagram**
+<div style={{textAlign: 'center'}}>
+  <img src={require('./assets/pioneer_architecture.png').default} alt='Pioneer architecture' />
+</div>
 
 In order to use Pioneer in your application you need to run Pioneer on your own server. Running Pioneer locally removes any risk of confidential feature flag or user data being accessed outside of your system.
 
