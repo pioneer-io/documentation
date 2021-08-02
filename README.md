@@ -1,6 +1,12 @@
+<p align="center">
+    <img src="https://user-images.githubusercontent.com/56378698/127357452-1b57af9c-be5a-42ff-aecb-bd2e2c006716.png" alt="Pioneer logo" width="200" height="200">
+</p>
+
 # Pioneer-io Documentation
 
 Visit [this webpage](https://pioneer-io.github.io/documentation/) to view the documentation.
+
+We also encourage you to check out Pioneer's [case study](https://pioneer-io.github.io/).
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
