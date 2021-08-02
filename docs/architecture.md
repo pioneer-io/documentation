@@ -3,8 +3,6 @@ id: architecture
 title: Architecture
 ---
 
-**Diagram of system architecture**
-
 <div style={{textAlign: 'center'}}>
   <img src={require('./assets/pioneer_architecture.png').default} alt='Pioneer architecture diagram' />
 </div>
