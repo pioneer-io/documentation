@@ -20,6 +20,10 @@ To start the Pioneer application:
 docker-compose up
 ```
 
+<div style={{textAlign: 'center'}}>
+  <img src={require('./assets/pioneer_startup.gif').default} alt='Pioneer startup process in terminal' />
+</div>
+
 ### Access the User Interface
 Visit `http://localhost:3000` and start creating your own feature flags!
 
