@@ -5,6 +5,10 @@ title: Architecture
 
 **Diagram of system architecture**
 
+<div style={{textAlign: 'center'}}>
+  <img src={require('./assets/pioneer_architecture.png').default} alt='Pioneer architecture diagram' />
+</div>
+
 The Pioneer application is comprised of multiple components:
 * Compass - a React application that provides a GUI for users.
 * PostgreSQL - database to store flag, log and SDK key data.
