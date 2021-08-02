@@ -27,4 +27,6 @@ docker-compose up
 ### Access the User Interface
 Visit `http://localhost:3000` and start creating your own feature flags!
 
-
+<div style={{textAlign: 'center'}}>
+  <img src={require('./assets/flag_dashboard.png').default} alt='Pioneer main dashboard' />
+</div>
