@@ -1,6 +1,6 @@
 ---
 id: javascript-sdk-doc
-title: Node.JS SDK 
+title: Node.js SDK 
 ---
 
 ## Installation
