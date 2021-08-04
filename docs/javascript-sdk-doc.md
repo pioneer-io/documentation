@@ -18,7 +18,9 @@ npm install pioneer-javascript-sdk
 
 To initialize a new SDK client, you need to pass in the server address and port of Scout for the first parameter. **Scout is the name of a daemon that serves the entire feature ruleset to all connected SDK clients through SSE.** Note, that if the actual endpoint contains a path like "/features", then you should include that in the `getServerAddress()` method of config. In addition, you need to supply an SDK key so that Scout can authenticate requests. This SDK key must match the one provided by Compass, and can be found under the 'Account' tab via the user interface.
 
-After instantiating a new SDK, you can call `connect()` which will attempt to connect with Scout. You should also chain another method called `withWaitForData()`. Calling await on this method will block the code until the SDK receives the entire ruleset from Scout. You can supply parameters for how long and how many times it should try to connect before timing out.
+After instantiating a new SDK, you can call `connect()` which will attempt to connect with Scout. You should also chain another method called `withWaitForData()`. Calling await on this method will block the code until the SDK receives the entire ruleset from Scout. If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times. The SDK will 'jitter' these connection attempts-- pausing for a random length of time between 1 and 10 seconds (inclusive) in between each attempt.
+
+If the connection fails 10 times, an error will be logged to the user  and the SDK will stop trying to connect.
 
 After you have connected, the `client` property on the config instance should be where you call `getFeature` to get a certain feature from the ruleset.
 
@@ -45,8 +47,7 @@ if (sdkClient.getFeature("LOGIN_MICROSERVICE") {
 ```
 
 ## Adding a Context
-
-This SDK allows you to specify a context when calling the `getFeature` method. A context allows the SDK to evaluate strategies associated with a certain feature state. For example, a feature flag has a rollout strategy, such that only 10% of users should get the new feature, if the feature flag was turned on in via the Compass user interface or API. In order to determine whether a user gets that new feature, the developer should supply a userKey that uniquely identifies that user. The SDK will calculate the percentage associated with that uesrKey and if that percentage is lower than 10%, then the SDK will evaluate to true.
+This SDK allows you to specify a context when calling the `getFeature` method. A context allows the SDK to evaluate strategies associated with a certain feature state. Before using a context though, the feature flag must have a rollout strategy, greater than 0%, and the feature flag must be toggled on via the Compass user interface or API. In order to determine whether a user gets that new feature, the developer should supply a userKey that uniquely identifies that user. The SDK will calculate the percentage associated with that uesrKey and if that percentage is lower than 10%, then the SDK will evaluate to true.
 
 ```javascript
 const SDK = require("pioneer-javascript-sdk");
@@ -69,7 +70,7 @@ if (context.getFeature("LOGIN_MICROSERVICE") {
 
 ## Supplying default values
 
-Any time you call getFeature on either a normal `client` or on a `clientWithContext`, you can supply a default value for the second parameter in case the feature you are trying to index does not exist.
+Any time you call `getFeature` on either a normal `client` or on a `clientWithContext`, you can supply a default value for the second parameter in case the feature you are trying to index does not exist.
 
 ```javascript
 // both of the following will return false if the feature "LOGIN_MICROSERVICE" does not exist
