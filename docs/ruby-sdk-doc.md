@@ -5,6 +5,10 @@ title: Ruby SDK
 
 # Ruby SDK
 
+[![Test](https://github.com/pioneer-io/ruby-sdk/actions/workflows/verify.yml/badge.svg)](https://github.com/pioneer-io/ruby-sdk/actions/workflows/verify.yml)
+
+[![npm Reference](./assets/ruby_badge.svg)](https://rubygems.org/gems/pioneer_ruby_sdk)
+
 ## Getting Started
 The Pioneer Ruby SDK is available as a Ruby Gem: https://rubygems.org/gems/pioneer_ruby_sdk
 

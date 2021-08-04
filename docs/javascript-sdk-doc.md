@@ -3,6 +3,10 @@ id: javascript-sdk-doc
 title: Node.js SDK 
 ---
 
+[![Test](https://github.com/pioneer-io/javascript-sdk/actions/workflows/verify.yml/badge.svg)](https://github.com/pioneer-io/javascript_sdk/actions/workflows/verify.yml)
+
+[![npm Reference](./assets/npm_badge.svg)](https://www.npmjs.com/package/pioneer-javascript-sdk)
+
 ## Installation
 
 Run the following command inside an npm project for the package.
