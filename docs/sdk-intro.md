@@ -16,7 +16,7 @@ To establish a connection between the SDK and Pioneer, you must provide the URL 
 In order to roll a feature flag out to a specific percentage of users, you need to provide a unique identifier for each individual user. We recommend using a session cookie. This ensures that if a user disconnects and re-connects, they will receive the same feature flag as their previous session. Providing a user identifier is referred to as 'providing a context' in the SDK documentation. 
 
 ## Providing default values
-When retrieving the value of a feature flag from an SDK within your application code, you can pass in a default value, which will be returned if the specified flag cannot be returned. This is useful if a connection failure occurs between your application and Pioneer. If the SDK cannot retrieve your flag dataset from Pioneer, rather than throwing an error the SDK will return the supplied default value and an error message will be logged. 
+When retrieving the value of a feature flag from an SDK within your application code, you can pass in a default value, which will be returned if the specified flag cannot be returned. This is useful if a connection failure occurs between your application and Pioneer. If the SDK cannot retrieve your flag dataset from Pioneer, rather than throwing an error, the SDK will return the supplied default value and an error message will be logged. 
 
 <Tabs
   defaultValue='js'

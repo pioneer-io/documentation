@@ -16,7 +16,7 @@ import TabItem from '@theme/TabItem';
 
 Welcome to Pioneer, a light-weight feature flag management tool.
 
-Pioneer is a self-hosted application that can be installed on your own server and run with just a single command.
+Pioneer is a self-hosted application that can be installed on your own server and ran with just a single command.
 
 ## Why use Pioneer?
 Using a feature flag management tool, such as Pioneer, enables you to minimize the risk of outages when introducing microservices into your architecture. If a new microservice causes any issues in your deployed application, you can switch the microservice off with just a toggle of a button and revert to the previous code in real-time, without the need for redeployment.
