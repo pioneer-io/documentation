@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 SDKs handle the communication between your application and Pioneer; additionally, they are used within your application code to determine whether a feature flag is switched on or off. 
 
-Pioneer SDKs are available in [Node.JS](/javascript-sdk-doc.md), [Ruby](/ruby-sdk-doc.md) and [Go](/go-sdk-doc.md). This page provides a general overview of SDK features. See the specific language SDK documentation for full details on implementation. 
+Pioneer SDKs are available in [Node.js](/javascript-sdk-doc.md), [Ruby](/ruby-sdk-doc.md) and [Go](/go-sdk-doc.md). This page provides a general overview of SDK features. See the specific language SDK documentation for full details on implementation. 
 
 ## Connecting SDK to Pioneer
 To establish a connection between the SDK and Pioneer, you must provide the URL of the Scout daemon component of Pioneer (default is `http://localhost:3030`) and the SDK key that is provided in the 'Account' tab of the Pioneer GUI.

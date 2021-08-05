@@ -17,4 +17,4 @@ The second is just as straightforward: *the flag must have a rollout percentage 
 
 The last condition is also quite easy: *the SDK client must be given a 'user-context'* within your application code. The context for an SDK is created using a unique identifier (such as a session cookie, for example) that can serve to identify individual users. With the context in place, the SDK will then use the rollout percentage to determine if the user receives the feature flag or not.
 
-For more specific information on how to create contexts for the SDK in oyur application, please refer to the specific SDK documentation for your chosen language.
+For more specific information on how to create contexts for the SDK in your application, please refer to the specific SDK documentation for your chosen language.
