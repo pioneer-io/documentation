@@ -16,11 +16,11 @@ npm install pioneer-javascript-sdk
 
 ## Basic Usage
 
-To initialize a new SDK client, you need to pass in the server address and port of Scout for the first parameter. **Scout is the name of a daemon that serves the entire feature ruleset to all connected SDK clients through SSE.** Note, that if the actual endpoint contains a path like "/features", then you should include that in the `getServerAddress()` method of config. In addition, you need to supply an SDK key so that Scout can authenticate requests. This SDK key must match the one provided by Compass, and can be found under the 'Account' tab via the user interface.
+To initialize a new SDK client, you need to pass in the server address and port of Scout for the first parameter. **Scout is the name of a daemon that serves the entire feature ruleset to all connected SDK clients through SSE.** Note, that if the actual endpoint contains a path like "/features", then you should include that in the `getServerAddress()` method of config. In addition, you need to supply an SDK key so that Scout can authenticate requests. This SDK key must match the one provded by Compass, and can be found under the 'Account' tab via the user interface.
 
-After instantiating a new SDK, you can call `connect()` which will attempt to connect with Scout. You should also chain another method called `withWaitForData()`. Calling await on this method will block the code until the SDK receives the entire ruleset from Scout. If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times. The SDK will 'jitter' these connection attempts-- pausing for a random length of time between 1 and 10 seconds (inclusive) in between each attempt.
+After instantiating a new SDK, you can call `connect()` which will attempt to connect with Scout. You should also chain another method called `withWaitForData()`. Calling await on this method will block the code until the SDK receives the entire ruleset from Scout. The SDK will poll for when it receives data from Scout, 10 times with an interval of around 1-10 seconds. After these polling attempts, if it still has not received data, it will close the connection to avoid overwhelming Scout with requests.
 
-If the connection fails 10 times, an error will be logged to the user  and the SDK will stop trying to connect.
+If the connection fails 10 times, an error will be logged to the user and the SDK will stop trying to connect.
 
 After you have connected, the `client` property on the config instance should be where you call `getFeature` to get a certain feature from the ruleset.
 
@@ -47,7 +47,8 @@ if (sdkClient.getFeature("LOGIN_MICROSERVICE") {
 ```
 
 ## Adding a Context
-This SDK allows you to specify a context when calling the `getFeature` method. A context allows the SDK to evaluate strategies associated with a certain feature state. Before using a context though, the feature flag must have a rollout strategy, greater than 0%, and the feature flag must be toggled on via the Compass user interface or API. In order to determine whether a user gets that new feature, the developer should supply a userKey that uniquely identifies that user. The SDK will calculate the percentage associated with that uesrKey and if that percentage is lower than 10%, then the SDK will evaluate to true.
+
+This SDK allows you to specify a context when calling the `getFeature` method. A context allows the SDK to evaluate strategies associated with a certain feature state. Before using a context though, the feature flag must have a rollout strategy, greater than 0%, and the feature flag must be toggled on  via the Compass user interface or API. In order to determine whether a user gets that new feature, the developer should supply a userKey that uniquely identifies that user. The SDK will calculate the percentage associated with that uesrKey and if that percentage is lower than 10%, then the SDK will evaluate to true.
 
 ```javascript
 const SDK = require("pioneer-javascript-sdk");
@@ -151,7 +152,7 @@ This will refer to a new `EventSourceClient` instance that will be instantiated 
 This will internally create a new `EventSourceClient` instance, which is itself a wrapper for the `eventsource` npm package. It will then have the instance try and connect with the Scout daemon. It will return the config instance for additional method chaining. 
 
 ### `async Config.prototype.withWaitForData()`<br/>
-This will wait until the `client` instance has received data from Scout. You should only call this after you called connect, otherwise the `client` instance will be undefined. The polling checks for a `hasData` property in the `client` instance, which gets set to true when the `client` receives data from Scout through SSE. This method will attempt to poll 10 times and also add a 1 to 10 second random jitter between each waiting interval.
+This will wait until the `client` instance has received data from Scout. You should only call this after you called connect, otherwise the `client` instance will be undefined. The polling checks for a `hasData` property in the `client` instance, which gets set to true when the `client` receives data from Scout through SSE. This method will attempt to poll 10 times with a waiting interval of around 1-10 seconds, after which it will close the SSE connection.
 
 ### `Config.prototype.withContext()`<br/>
 This method should be called after you have connected with Scout. This will return a new `clientWithContext` instance. The parameter is an object literal containing the userKey property: `{ userKey: "123-456-789" }`. Ideally, the `userKey` will be some unique identifier for a user making the request for your app.
@@ -253,3 +254,4 @@ This will basically take in the same parameters as the `logEvent()` method of `E
 
 ## Tests
 To run tests, simply run `npm test`, which will run unit tests for most of the classes.
+*Note:* Tests are npm ignored, so you have to pull from github for the tests.

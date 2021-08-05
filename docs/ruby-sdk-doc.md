@@ -31,7 +31,7 @@ sdk_connection = sdk_client.connect().with_wait_for_data()
 ```
 
 ## Failed SSE Connections
-If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times. The SDK will 'jitter' these connection attempts-- pausing for a random length of time between 1 and 10 seconds (inclusive) in between each attempt.
+If the SDK fails to connect to the Scout daemon as an eventsource client, the connection attempt will be retried up to 10 times. 
 
 If the connection fails 10 times, an error will be logged to the user (example below) and the SDK will stop trying to connect.
 
@@ -115,4 +115,4 @@ sdk_with_user.log_event(event_object)
 ```
 
 ## Testing 
-To run a basic suite of unit tests, just run `rake` from the main directory.
+To run a basic suite of unit tests, just `rake` from the main directory.
