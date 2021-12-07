@@ -4,6 +4,8 @@
 
 # Pioneer-io Documentation
 
+# ⚠️ This project is no longer actively maintained ⚠️
+
 Visit [this webpage](https://pioneer-io.github.io/documentation/) to view the documentation.
 
 We also encourage you to check out Pioneer's [case study](https://pioneer-io.github.io/).
